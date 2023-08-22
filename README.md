@@ -8,7 +8,8 @@
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
-This repository contains the dataset of a paper that we submitted to the [ISWC 2023 Resource Track](https://iswc2023.semanticweb.org/call-for-resources-track-papers/).
+This repository contains a dataset of claims and their corresponding fact-checks.
+
 The data is automatically updated every day with ClaimReview.
 
 You can download the [latest version from the release section](https://github.com/MartinoMensio/claimreview-data/releases/latest), or browse [all the versions](https://github.com/MartinoMensio/claimreview-data/releases/).
