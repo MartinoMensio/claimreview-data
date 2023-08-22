@@ -1,0 +1,23 @@
+name: Redeploy on New Release
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Send Notification
+        run: |
+          release_tag=${{ github.event.release.tag_name }}
+          release_url=${{ github.event.release.html_url }}
+          notification_url="${{ secrets.WEBHOOK_URL }}?tag=${release_tag}&url=${release_url}"
+          echo "New release available: ${release_tag}"
+          echo "Release URL: ${release_url}"
+          curl -X POST -u ${{ secrets.WEBHOOK_USERNAME }}:${{ secrets.WEBHOOK_PASSWORD }} "$notification_url"
