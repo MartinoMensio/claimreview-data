@@ -20,4 +20,4 @@ jobs:
           notification_url="${{ secrets.WEBHOOK_URL }}?tag=${release_tag}&url=${release_url}"
           echo "New release available: ${release_tag}"
           echo "Release URL: ${release_url}"
-          curl -X POST -u ${{ secrets.WEBHOOK_USERNAME }}:${{ secrets.WEBHOOK_PASSWORD }} "$notification_url"
+          curl -sS -X POST -u ${{ secrets.WEBHOOK_USERNAME }}:${{ secrets.WEBHOOK_PASSWORD }} "$notification_url"
