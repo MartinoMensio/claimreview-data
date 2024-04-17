@@ -26,6 +26,8 @@ The data collection is performed in 6 steps:
 5. Occurrences Extraction and Unshortening: we extract the URLs where the claims occur and we resolve the links that use shortening services (e.g., bit.ly) or archives (e.g., archive.is)
 6. Misinformation Database and Snapshot: we build the output files described below
 
+The process of collection is run by the `claimreview_collector_full` from the [MisinfoMe project](https://github.com/MartinoMensio/misinfome).
+
 ## Output files
 
 Each archive contains the following files:
@@ -37,7 +39,8 @@ Each archive contains the following files:
 - `claim_labels_mapping.json`: statistics on how labels have been translated.
 - `disagreeing_reviews.json`: cases where the same URL has received multiple disagreeing ratings.
 - `not_ifcn_sources.json`: this file contains a list of domains that published ClaimReview but are not in the IFCN list.
-- `links_all_full.json`: details of the reviewed URLs. For each URL that has been reviewed, we show the reviews and the normalised ratings. 
+- `links_all_full.json`: details of the reviewed URLs. For each URL that has been reviewed, we show the reviews and the normalised ratings.
+- `stats.json`: statistics of data collection.
 
 This data is currently used by [MisinfoMe](https://misinfo.me/).
 
